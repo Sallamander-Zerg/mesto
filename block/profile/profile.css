@@ -7,9 +7,9 @@
 @media screen and (max-width: 948px) {
   .profile {
     grid-template-columns: 286px;
-    grid-template-areas: 
-     "avatar"
-     "intro"
-     "addBatoon";
+    grid-template-areas:
+      "avatar"
+      "intro"
+      "addBatoon";
   }
 }

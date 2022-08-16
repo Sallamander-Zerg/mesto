@@ -8,9 +8,9 @@
   width: 22px;
   height: 19px;
 }
-.element__Like-Button:hover{
-    opacity: 0.5;
+.element__Like-Button:hover {
+  opacity: 0.5;
 }
-.element__Like-Button.like{
-    background-image: url(../../../photo/like_active.svg); 
+.element__Like-Button.like {
+  background-image: url(../../../photo/like_active.svg);
 }

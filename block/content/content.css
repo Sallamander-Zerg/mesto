@@ -4,5 +4,7 @@
   justify-self: center;
   max-width: 880px;
   grid-template-columns: repeat(2, auto);
-  grid-template-areas: "profile profile ";
+  grid-template-areas:
+    "profile profile "
+    "elements elements";
 }

@@ -10,7 +10,7 @@
   text-align: center;
   margin: 49px 0 37px;
 }
-.popup__saveButton:hover{
+.popup__saveButton:hover {
   opacity: 0.8;
 }
 @media screen and (max-width: 948px) {
