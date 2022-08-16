@@ -1,0 +1,3 @@
+.popup.popup__active{
+    display: flex;
+}

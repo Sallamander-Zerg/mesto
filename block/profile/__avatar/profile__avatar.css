@@ -1,0 +1,8 @@
+.profile__avatar {
+  grid-area: avatar;
+  border-radius: 50%;
+  min-width:120px;
+  max-height: 120px;
+  align-self: start;
+  margin: 0 auto;
+}
