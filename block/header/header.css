@@ -5,7 +5,7 @@
   max-width: 880px;
   min-height: 74px;
   padding-top: 45px;
-  border-bottom: 1px solid rgb(84,84,84);
+  border-bottom: 1px solid rgb(84, 84, 84);
   justify-self: center;
   margin-bottom: 40px;
   grid-template-columns: repeat(2, auto);
@@ -14,7 +14,7 @@
 @media screen and (max-width: 948px) {
   .header {
     min-height: 56px;
-    padding-top: 28px;  
+    padding-top: 28px;
     margin-bottom: 42px;
   }
 }
