@@ -1,4 +1,4 @@
-# Проект: Место
+# Проект: https://sallamander-zerg.github.io/mesto/
 
 ### Обзор
 
