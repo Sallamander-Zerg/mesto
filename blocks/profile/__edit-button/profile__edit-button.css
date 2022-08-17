@@ -6,11 +6,12 @@
   color: #ffffff;
   background: black;
   border: 1px solid #ffffff;
-  background-image: url(../../../photo/edit.jpg);
+  background-image: url(../../../images/edit.jpg);
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
   margin-top: 10px;
+  cursor: pointer
 }
 .profile__edit-button:hover {
   opacity: 0.6;

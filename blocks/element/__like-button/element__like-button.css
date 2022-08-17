@@ -1,8 +1,8 @@
-.element__Like-Button {
+.element__like-button {
   grid-column: 2;
   grid-row: 2;
   background-color: #fff;
-  background-image: url(../../../photo/like.svg);
+  background-image: url(../../../images/like.svg);
   border: none;
   box-shadow: none;
   width: 22px;
