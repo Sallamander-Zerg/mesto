@@ -10,7 +10,7 @@
   position: fixed;
   top: calc((100% - 430px) / 2);
   left: calc((100% + 430px) / 2);
-  cursor: pointer
+  cursor: pointer;
 }
 .popup__close-butoon:hover {
   opacity: 0.6;

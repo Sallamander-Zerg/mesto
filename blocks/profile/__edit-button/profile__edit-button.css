@@ -11,7 +11,7 @@
   background-repeat: no-repeat;
   background-position: center;
   margin-top: 10px;
-  cursor: pointer
+  cursor: pointer;
 }
 .profile__edit-button:hover {
   opacity: 0.6;
