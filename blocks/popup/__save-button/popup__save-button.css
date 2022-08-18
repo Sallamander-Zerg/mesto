@@ -10,6 +10,8 @@
   text-align: center;
   margin: 49px 0 37px;
   cursor: pointer;
+  border: none;
+  border-radius: 2px;
 }
 .popup__save-button:hover {
   opacity: 0.8;
