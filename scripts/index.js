@@ -8,18 +8,18 @@ let job = document.querySelector('.profile__text');
 let name = document.querySelector('.profile__title');
 let form = document.querySelector('.popup__form');
 openform.addEventListener('click',()=>{
-  popupcontaner.classList.add('popup__active');
+  popupcontaner.classList.add('popup_active');
   newname.value = name.textContent;
   newjob.value = job.textContent;
 });
 closeform.addEventListener('click',()=>{
-  popupcontaner.classList.remove('popup__active');
+  popupcontaner.classList.remove('popup_active');
 });
 function formSubmitHandler (evt) {
   evt.preventDefault(); 
   name.textContent = newname.value;
   job.textContent = newjob.value;
-  popupcontaner.classList.remove('popup__active'); 
+  popupcontaner.classList.remove('popup_active'); 
 }
 form.addEventListener('submit', formSubmitHandler);
 

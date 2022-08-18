@@ -10,6 +10,3 @@
   background-size: cover;
   display: none;
 }
-.popup.show {
-  display: flex;
-}

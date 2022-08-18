@@ -9,6 +9,7 @@
   height: 19px;
 }
 .element__like-button:hover {
+  cursor: pointer;
   opacity: 0.5;
 }
 /* .element__like-button.like {
