@@ -19,6 +19,7 @@
   .popup__close-butoon {
     width: 20px;
     height: 20px;
+    top: calc((100% - 404px) / 2);
     left: calc((100% + 242px) / 2 + 2px);
   }
 }

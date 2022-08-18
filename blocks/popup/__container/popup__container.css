@@ -5,6 +5,7 @@
   position: fixed;
   left: calc((100% - 430px) / 2);
   border-radius: 10px;
+  
 }
 @media screen and (max-width: 948px) {
   .popup__container {
