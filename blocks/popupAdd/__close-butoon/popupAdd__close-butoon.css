@@ -1,0 +1,25 @@
+.popupAdd__close-butoon {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-image: url(../../../images/close.svg);
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  top: calc((100% - 430px) / 2);
+  left: calc((100% + 430px) / 2);
+  cursor: pointer;
+}
+.popupAdd__close-butoon:hover {
+  opacity: 0.6;
+}
+@media screen and (max-width: 948px) {
+  .popupAdd__close-butoon {
+    width: 20px;
+    height: 20px;
+    top: calc((100% - 404px) / 2);
+    left: calc((100% + 242px) / 2 + 2px);
+  }
+}

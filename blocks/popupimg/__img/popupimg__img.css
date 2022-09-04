@@ -1,0 +1,10 @@
+.popupimg__img {
+  max-height: 540px;
+  height: 100%;
+ 
+}
+@media screen and (max-width: 948px) {
+  .popupimg__img {
+    max-height: 240px;
+  }
+}

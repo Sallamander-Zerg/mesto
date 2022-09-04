@@ -18,6 +18,7 @@
 @import url(../blocks/element/__description/element__description.css);
 @import url(../blocks/element/__heder/element__header.css);
 @import url(../blocks/element/__like-button/element__like-button.css);
+@import url(../blocks/element/__like-button/_active/element__like-button_active.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 @import url(../blocks/popup/popup.css);
@@ -28,3 +29,19 @@
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__field/popup__field.css);
 @import url(../blocks/popup/__save-button/popup__save-button.css);
+@import url(../blocks/popupAdd/popupAdd.css);
+@import url(../blocks/popupAdd/_active/popupAdd_active.css);
+@import url(../blocks/popupAdd/__container/popupAdd__container.css);
+@import url(../blocks/popupAdd/__close-butoon/popupAdd__close-butoon.css);
+@import url(../blocks/popupAdd/__form/popupAdd__form.css);
+@import url(../blocks/popupAdd/__title/popupAdd__title.css);
+@import url(../blocks/popupAdd/__field/popupAdd__field.css);
+@import url(../blocks/popupAdd/__save-button/popupAdd__save-button.css);
+@import url(../blocks/popupimg/popupimg.css);
+@import url(../blocks/popupimg/_active/popupimg_active.css);
+@import url(../blocks/popupimg/__contaner/popupimg__contaner.css);
+@import url(../blocks/popupimg/__close-butoon/popupimg__close-butoon.css);
+@import url(../blocks/popupimg/__conent/popupimg__conent.css);
+@import url(../blocks/popupimg/__img/popupimg__img.css);
+@import url(../blocks/popupimg/__name/popupimg__name.css);
+
