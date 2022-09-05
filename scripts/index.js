@@ -17,12 +17,42 @@ let newimege= document.getElementById('field4');
 let newimegename = document.getElementById('field3');
 let Card = document.querySelector('#card').content;
 let cards = document.querySelector('.elements');
+let element = document.querySelectorAll('.element')
 let photo = document.querySelectorAll('.element__photo');
 let popupimg = document.querySelector('.popupimg');
 let Sphoto = document.querySelector('.popupimg__img');
 let Salt = document.querySelector('.popupimg__name')
 let ClosePhoto = document.getElementById('closeimg');
+let DeleteButton = document.querySelectorAll('.element__delete');
 const initialCards = [
+  {
+    text:'Подольск',
+    src:'https://radiovera.ru/wp-content/uploads/2018/10/Gyustav-Dore-Ad.jpg'
+  },
+  {
+    text:'Карачевск',
+    src:'images/1.jpg'
+  },
+  {
+    text:'Гора Эльбрус',
+    src:'images/2.jpg'
+  },
+  {
+    text:'Домбай',
+    src:'images/3.jpg'
+  },
+  {
+    text:'Гора Эльбрус',
+    src:'images/4.jpg'
+  },
+  {
+    text:'Домбай',
+    src:'images/5.jpg'
+  },
+  {
+    text:'Карачаево-Черкесия',
+    src:'images/6.jpg'
+  },
   {
     text: 'Архыз',
     src: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -81,6 +111,9 @@ function create_newcards(card){
   newCard.querySelector('.element__like-button').addEventListener('click', ()=>{
     newCard.querySelector('.element__like-button').classList.toggle('element__like-button_active');
  });
+ newCard.querySelector('.element__delete').addEventListener('click', ()=>{
+  newCard.remove();
+});
  newCard.querySelector('.element__photo').addEventListener('click',()=>{
   popupimg.classList.add("popupimg_active");
   Sphoto.src = newCard.querySelector('.element__photo').src;
@@ -109,19 +142,20 @@ closeaddform.addEventListener('click',()=>{
 form.addEventListener('submit', formSubmitHandler);
  addcard.addEventListener('submit',addformcard);
 
-likeButton.forEach(function likeactive(like){
-  like.addEventListener('click', ()=>{
-     like.classList.toggle('element__like-button_active');
-  });
-});
-photo.forEach( function openphoto(open){
-  open.addEventListener('click',()=>{
-    popupimg.classList.add("popupimg_active");
-    Sphoto.src=open.src;
-    Salt.textContent=open.alt;
-  })
-})
+// likeButton.forEach(function likeactive(like){
+//   like.addEventListener('click', ()=>{
+//      like.classList.toggle('element__like-button_active');
+//   });
+// });
+// photo.forEach( function openphoto(open){
+//   open.addEventListener('click',()=>{
+//     popupimg.classList.add("popupimg_active");
+//     Sphoto.src=open.src;
+//     Salt.textContent=open.alt;
+//   })
+// })
 ClosePhoto.addEventListener('click',()=>{
   popupimg.classList.remove('popupimg_active');
 });
+
 
