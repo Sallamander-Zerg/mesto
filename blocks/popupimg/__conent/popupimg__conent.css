@@ -1,13 +1,13 @@
-.popupimg__conent{
-    display: flex;
-    flex-direction: column;
-    margin-left: 34px;
-    margin-right: 34px;
-    block-size: auto;
-    writing-mode: horizontal-tb;
+.popupimg__conent {
+  display: flex;
+  flex-direction: column;
+  margin-left: 34px;
+  margin-right: 34px;
+  block-size: auto;
+  writing-mode: horizontal-tb;
 }
 @media screen and (max-width: 948px) {
-    .popupimg__conent{
-      margin: 0;
-    }
+  .popupimg__conent {
+    margin: 0;
   }
+}
