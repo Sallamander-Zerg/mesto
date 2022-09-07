@@ -15,46 +15,46 @@
     <section class="profile">
         <img class="profile__avatar" src="images/avatar.jpg" alt="аватар">
         <div class="profile__intro">
-        <div class="profile__inline"><h1 class="profile__title">Жак-Ив Кусто</h1><button type="button"  class="profile__edit-button" id="openform"></button></div>
+        <div class="profile__inline"><h1 class="profile__title">Жак-Ив Кусто</h1><button type="button"  class="profile__edit-button js-modal-active"  data-modal="edituser"></button></div>
         <p class="profile__text" >Исследования океана</p>
         </div>
-        <button type="button"  class="profile__add-button" id ="openaddform"></button>
+        <button type="button"  class="profile__add-button js-modal-active"  data-modal="AddCard"></button>
     </section>
     <section class="elements"> 
-      <template id="card"> <article class="element"><button class ="element__delete"></button><img class="element__photo" src="images/1.jpg" alt="замок"><div class="element__description"><h2 class="element__header">Карачевск</h2><button type="button" class="element__like-button"></button></div></article></template>  
+      <template id="card"> <article class="element"><button class ="element__delete"></button><img class="element__photo" src="images/1.jpg" alt="замок" ><div class="element__description"><h2 class="element__header">Карачевск</h2><button type="button" class="element__like-button"></button></div></article></template>  
     </section>
   </main>
   <footer class="footer">
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
-  <div class="popup" id="popupcontaner">
+  <div class="popup js-modal" id="popupcontaner" data-modal="edituser">
     <div class="popup__container">
-        <button type="button" class="popup__close-butoon" id ="close"></button>
-        <form class="popup__form" name="form" >
+        <button type="button" class="popup__close-butoon js-modal-close"  data-modal="edituser"></button>
+        <form class="popup__form" name="form" id="formEdit">
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input name="field-name" type="text" class="popup__field" id="field1">
-          <input name="field-job" type="text" class="popup__field" id="field2">
+          <input name="field-name" type="text" class="popup__field" id="field-name">
+          <input name="field-job" type="text" class="popup__field" id="field-jod">
           <button type="submit"  class="popup__save-button" id="saveform">Сохранить</button>
         </form>
     </div>
   </div>
-  <div class="popupAdd" id="popupcontanerAdd">
-    <div class="popupAdd__container">
-        <button type="button" class="popupAdd__close-butoon" id ="closeAdd"></button>
-        <form class="popupAdd__form" name="form" >
-          <h2 class="popupAdd__title">Добавить картачку</h2>
-          <input name="field-mesto" type="text" class="popupAdd__field" id="field3" placeholder="Название">
-          <input name="field-src" type="url" class="popupAdd__field" id="field4" placeholder="Ссылка на картинку">
-          <button type="submit"  class="popupAdd__save-button" id="Addsaveform">Сохранить</button>
+  <div class="popup js-modal" id="popupcontanerAdd" data-modal="AddCard">
+    <div class="popup__container">
+        <button type="button" class="popup__close-butoon js-modal-close"  data-modal="AddCard"></button>
+        <form class="popup__form" name="formAdd" id="formAdd"  >
+          <h2 class="popup__title">Добавить картачку</h2>
+          <input name="field-mesto" type="text" class="popup__field_Add" id="field-alt" placeholder="Название">
+          <input name="field-src" type="url" class="popup__field_Add" id="field-src" placeholder="Ссылка на картинку">
+          <button type="submit"  class="popup__save-button" id="Addsaveform">Сохранить</button>
         </form>
     </div>
   </div>
-  <div class="popupimg" id="popupimgcontaner">
-    <div class="popupimg__contaner">
-      <button type="button" class="popupimg__close-butoon" id ="closeimg"></button>
-    <div class="popupimg__conent">
-      <img class="popupimg__img">
-      <div class="popupimg__name"></div>
+  <div class="popup js-modal" id="popupimgcontaner" data-modal="ImgCard"> 
+    <div class="popup__contaner_img">
+      <button type="button" class="popup__close-butoon_img js-modal-close" id ="closeimg" data-modal="ImgCard"></button>
+    <div class="popup__conent">
+      <img class="popup__img">
+      <div class="popup__name"></div>
     </div>
     </div>
   </div>    

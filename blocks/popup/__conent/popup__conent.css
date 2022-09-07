@@ -1,4 +1,4 @@
-.popupimg__conent {
+.popup__conent {
   display: flex;
   flex-direction: column;
   margin-left: 34px;
@@ -7,7 +7,7 @@
   writing-mode: horizontal-tb;
 }
 @media screen and (max-width: 948px) {
-  .popupimg__conent {
+  .popup__conent {
     margin: 0;
   }
 }
