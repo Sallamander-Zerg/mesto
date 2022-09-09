@@ -15,10 +15,10 @@
     <section class="profile">
         <img class="profile__avatar" src="images/avatar.jpg" alt="аватар">
         <div class="profile__intro">
-        <div class="profile__inline"><h1 class="profile__title">Жак-Ив Кусто</h1><button type="button"  class="profile__edit-button js-modal-active"  data-modal="edituser"></button></div>
+        <div class="profile__inline"><h1 class="profile__title">Жак-Ив Кусто</h1><button type="button"  class="profile__edit-button"  data-modal="edituser"></button></div>
         <p class="profile__text" >Исследования океана</p>
         </div>
-        <button type="button"  class="profile__add-button js-modal-active"  data-modal="AddCard"></button>
+        <button type="button"  class="profile__add-button"  data-modal="AddCard"></button>
     </section>
     <section class="elements"> 
       <template id="card"> <article class="element"><button class ="element__delete"></button><img class="element__photo" src="images/1.jpg" alt="замок" ><div class="element__description"><h2 class="element__header">Карачевск</h2><button type="button" class="element__like-button"></button></div></article></template>  
@@ -27,31 +27,31 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
-  <div class="popup js-modal" id="popupcontaner" data-modal="edituser">
+  <div class="popup js-popup-edit" id="popupcontaner" data-modal="edituser">
     <div class="popup__container">
-        <button type="button" class="popup__close-butoon js-modal-close"  data-modal="edituser"></button>
-        <form class="popup__form" name="form" id="formEdit">
+        <button type="button" class="popup__close-butoon"  data-modal="edituser"></button>
+        <form class="popup__form js-popup-forEdit" name="form" id="formEdit">
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input name="field-name" type="text" class="popup__field" id="field-name">
-          <input name="field-job" type="text" class="popup__field" id="field-jod">
+          <input name="field-job" type="text" class="popup__field field-jod">
+          <input name="field-name" type="text" class="popup__field field-name">
           <button type="submit"  class="popup__save-button" id="saveform">Сохранить</button>
         </form>
     </div>
   </div>
-  <div class="popup js-modal" id="popupcontanerAdd" data-modal="AddCard">
+  <div class="popup js-popup-Add" id="popupcontanerAdd" data-modal="AddCard">
     <div class="popup__container">
-        <button type="button" class="popup__close-butoon js-modal-close"  data-modal="AddCard"></button>
-        <form class="popup__form" name="formAdd" id="formAdd"  >
+        <button type="button" class="popup__close-butoon"  data-modal="AddCard"></button>
+        <form class="popup__form js-popup-forAdd" name="formAdd" id="formAdd"  >
           <h2 class="popup__title">Добавить картачку</h2>
-          <input name="field-mesto" type="text" class="popup__field-Add" id="field-alt" placeholder="Название">
-          <input name="field-src" type="url" class="popup__field-Add" id="field-src" placeholder="Ссылка на картинку">
+          <input name="field-mesto" type="text" class="popup__field_Add field-alt"  placeholder="Название">
+          <input name="field-src" type="url" class="popup__field_Add field-src"  placeholder="Ссылка на картинку">
           <button type="submit"  class="popup__save-button" id="Addsaveform">Сохранить</button>
         </form>
     </div>
   </div>
-  <div class="popup js-modal" id="popupimgcontaner" data-modal="ImgCard"> 
+  <div class="popup js-popup-Img"  data-modal="ImgCard"> 
     <div class="popup__contaner-img">
-      <button type="button" class="popup__closeButoon-img js-modal-close" id ="closeimg" data-modal="ImgCard"></button>
+      <button type="button" class="popup__close-butoon-img" id ="closeimg" data-modal="ImgCard"></button>
     <div class="popup__conent">
       <img class="popup__img">
       <div class="popup__name"></div>

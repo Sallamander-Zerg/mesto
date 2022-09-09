@@ -6,7 +6,7 @@
   block-size: auto;
   writing-mode: horizontal-tb;
 }
-@media screen and (max-width: 948px) {
+@media screen and (max-width: 740px) {
   .popup__conent {
     margin: 0;
   }
