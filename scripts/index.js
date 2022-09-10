@@ -1,24 +1,24 @@
 const popupContaner =document.querySelectorAll('.popup');
 const popupAddProfile=document.querySelector('.js-popup-Add');
 const popupEditProfile=document.querySelector('.js-popup-edit');
-let newname= document.querySelector('.field-jod');
-let newjob = document.querySelector('.field-name');
-let job = document.querySelector('.profile__text');
-let name = document.querySelector('.profile__title');
+const newname= document.querySelector('.field-jod');
+const newjob = document.querySelector('.field-name');
+const job = document.querySelector('.profile__text');
+const name = document.querySelector('.profile__title');
 const form = document.querySelector('.js-popup-forEdit');
 const cardAdd = document.querySelector('.js-popup-forAdd');
-let likeButton = document.querySelectorAll('.element__like-button');
+const likeButton = document.querySelectorAll('.element__like-button');
 const buttonAddProfile = document.querySelector('.profile__add-button');
 const buttonEditProfile  = document.querySelector('.profile__edit-button');
 const buttonsCloseProfile = document.querySelectorAll('.popup__close-butoon');
-let newimege= document.querySelector('.field-src');
-let newimegename = document.querySelector('.field-alt');
-let camelCase = document.querySelector('#card').content;
-let cards = document.querySelector('.elements');
-let element = document.querySelectorAll('.element')
-let photo = document.querySelectorAll('.element__photo');
-let sPhoto = document.querySelector('.popup__img');
-let sAlt = document.querySelector('.popup__name');
+const newimege= document.querySelector('.field-src');
+const newimegename = document.querySelector('.field-alt');
+const camelCase = document.querySelector('#card').content;
+const cards = document.querySelector('.elements');
+const element = document.querySelectorAll('.element')
+const photo = document.querySelectorAll('.element__photo');
+const sPhoto = document.querySelector('.popup__img');
+const sAlt = document.querySelector('.popup__name');
 const popupImgProfile = document.querySelector('.js-popup-Img');
 const buttonCloseImgProfile = document.querySelector('.popup__close-butoon-img');
 const activePopup = (popup)=>{
@@ -90,10 +90,9 @@ buttonAddProfile.addEventListener('click', function() {
   activePopup(popupAddProfile); 
 }) 
 buttonsCloseProfile.forEach(function(butoon){
-  butoon.addEventListener('click', function() { 
-    popupContaner.forEach(function(el){
-      notActivePopup(el)
-    })
+  butoon.addEventListener('click', function() {
+    notActivePopup(popupAddProfile);
+    notActivePopup(popupEditProfile); 
   })
 })
 function formSubmitHandler (evt) {
@@ -103,17 +102,17 @@ function formSubmitHandler (evt) {
   notActivePopup(popupEditProfile)
   }
 
-function addformcard(evt){
+function addFormCard(evt){
 evt.preventDefault();
 let src  = newimege.value;
 let text = newimegename.value;  
 let stats = {text,src};
-let value = create_newcards(stats);
+let value = createNewCards(stats);
 addCards(value);
 notActivePopup(popupAddProfile)
 }
 
-function create_newcards(card){
+function createNewCards(card){
   const newCard =   camelCase.querySelector('.element').cloneNode(true);
   newCard.querySelector('.element__photo').setAttribute('src', card.src);
   newCard.querySelector('.element__photo').setAttribute('alt', card.text);
@@ -133,14 +132,14 @@ function create_newcards(card){
 }
 
 initialCards.map(function (card){
-  const el = create_newcards(card);
+  const el = createNewCards(card);
   addCards(el);
 })
 function addCards(el){
   cards.prepend(el);
 }
 form.addEventListener('submit', formSubmitHandler);
-cardAdd.addEventListener('submit',addformcard);
+cardAdd.addEventListener('submit',addFormCard);
 
 buttonCloseImgProfile.addEventListener('click',()=>{
   notActivePopup(popupImgProfile);
@@ -170,3 +169,6 @@ buttonCloseImgProfile.addEventListener('click',()=>{
 //     newJob.value = job.textContent;
 //   });
 // });
+// popupContaner.forEach(function(el){
+    //   notActivePopup(el)
+    // })
