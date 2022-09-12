@@ -10,7 +10,8 @@ const cardAdd = document.querySelector('.js-popup-forAdd');
 const likeButton = document.querySelectorAll('.element__like-button');
 const buttonAddProfile = document.querySelector('.profile__add-button');
 const buttonEditProfile  = document.querySelector('.profile__edit-button');
-const buttonsCloseProfile = document.querySelectorAll('.popup__close-butoon');
+const buttonCloseAddProfile = document.querySelector('.js-closeButoon-Add');
+const buttonCloseEditProfile  = document.querySelector('.js-closeButoon-Edit');
 const newimege= document.querySelector('.field-src');
 const newimegename = document.querySelector('.field-alt');
 const camelCase = document.querySelector('#card').content;
@@ -89,12 +90,12 @@ buttonEditProfile.addEventListener('click', function() {
 buttonAddProfile.addEventListener('click', function() { 
   activePopup(popupAddProfile); 
 }) 
-buttonsCloseProfile.forEach(function(butoon){
-  butoon.addEventListener('click', function() {
-    notActivePopup(popupAddProfile);
-    notActivePopup(popupEditProfile); 
-  })
-})
+buttonCloseEditProfile.addEventListener('click', function() { 
+  notActivePopup(popupEditProfile); 
+}) 
+buttonCloseAddProfile.addEventListener('click', function() { 
+  notActivePopup(popupAddProfile); 
+}) 
 function formSubmitHandler (evt) {
   evt.preventDefault(); 
   name.textContent = newname.value;
@@ -104,10 +105,10 @@ function formSubmitHandler (evt) {
 
 function addFormCard(evt){
 evt.preventDefault();
-let src  = newimege.value;
-let text = newimegename.value;  
-let stats = {text,src};
-let value = createNewCards(stats);
+const src  = newimege.value;
+const text = newimegename.value;  
+const stats = {text,src};
+const value = createNewCards(stats);
 addCards(value);
 notActivePopup(popupAddProfile)
 }
@@ -172,3 +173,9 @@ buttonCloseImgProfile.addEventListener('click',()=>{
 // popupContaner.forEach(function(el){
     //   notActivePopup(el)
     // })
+// buttonsCloseProfile.forEach(function(butoon){
+//   butoon.addEventListener('click', function() {
+//     notActivePopup(popupAddProfile);
+//     notActivePopup(popupEditProfile); 
+//   })
+// })
