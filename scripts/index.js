@@ -1,8 +1,8 @@
 const popupContaner =document.querySelectorAll('.popup');
 const popupAddProfile=document.querySelector('.js-popup-Add');
 const popupEditProfile=document.querySelector('.js-popup-edit');
-const newname= document.querySelector('.field-jod');
-const newjob = document.querySelector('.field-name');
+const newname= document.querySelector('.field-name');
+const newjob = document.querySelector('.field-jod');
 const job = document.querySelector('.profile__text');
 const name = document.querySelector('.profile__title');
 const form = document.querySelector('.js-popup-forEdit');
@@ -101,7 +101,7 @@ function formSubmitHandler (evt) {
   name.textContent = newname.value;
   job.textContent = newjob.value;
   notActivePopup(popupEditProfile)
-  }
+}
 
 function addFormCard(evt){
 evt.preventDefault();
