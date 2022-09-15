@@ -1,7 +1,6 @@
 .popup__field-Add {
   max-width: 358px;
   width: 100%;
-  margin-bottom: 30px;
   border: none;
   font-weight: 400;
   font-size: 14px;
@@ -14,9 +13,6 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-}
-.popup__field-Add:nth-child(3n) {
-  margin-bottom: 0;
 }
 @media screen and (max-width: 948px) {
   .popup__field-Add {

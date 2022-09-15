@@ -1,8 +1,8 @@
-const popupContaner =document.querySelectorAll('.popup');
+
 const popupAddProfile=document.querySelector('.js-popup-Add');
 const popupEditProfile=document.querySelector('.js-popup-edit');
 const newname= document.querySelector('.field-name');
-const newjob = document.querySelector('.field-jod');
+const newjob = document.querySelector('.field-job');
 const job = document.querySelector('.profile__text');
 const name = document.querySelector('.profile__title');
 const form = document.querySelector('.js-popup-forEdit');
@@ -22,12 +22,19 @@ const sPhoto = document.querySelector('.popup__img');
 const sAlt = document.querySelector('.popup__name');
 const popupImgProfile = document.querySelector('.js-popup-Img');
 const buttonCloseImgProfile = document.querySelector('.popup__close-butoon-img');
+const CloseFormkey = ()=>{
+  const popupMas = Array.from(document.querySelectorAll('.popup'));
+  popupMas.forEach(function(el){
+    closeKey(el)
+  })
+}
 const activePopup = (popup)=>{
   popup.classList.add('popup_active');
  };
  const notActivePopup = (cPopup)=>{
   cPopup.classList.remove('popup_active');
  };
+ 
 const initialCards = [
   {
     text:'Подольск',
@@ -90,6 +97,20 @@ buttonEditProfile.addEventListener('click', function() {
 buttonAddProfile.addEventListener('click', function() { 
   activePopup(popupAddProfile); 
 }) 
+
+function closeKey(pop){ 
+  pop.addEventListener('click',function(evt){
+  if(!evt.target.closest('.popup__container')){
+    notActivePopup(pop);
+  }
+  }) 
+    document.addEventListener('keydown', function (evt) {
+    if (evt.code==='Escape') {
+      notActivePopup(pop);
+    };
+  }); 
+}
+
 buttonCloseEditProfile.addEventListener('click', function() { 
   notActivePopup(popupEditProfile); 
 }) 
@@ -145,6 +166,7 @@ cardAdd.addEventListener('submit',addFormCard);
 buttonCloseImgProfile.addEventListener('click',()=>{
   notActivePopup(popupImgProfile);
 });
+CloseFormkey()
 // modalButtonsclose.forEach(function(item){
 //   item.addEventListener('click',function Close(event){
 //     event.preventDefault();

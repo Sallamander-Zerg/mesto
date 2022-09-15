@@ -9,7 +9,12 @@
   padding-bottom: 13px;
   margin-bottom: 0;
 }
-
+.popup__field-Add {
+  color: #c4c4c4;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
 @media screen and (max-width: 948px) {
   .popup__field {
     max-width: 238px;
