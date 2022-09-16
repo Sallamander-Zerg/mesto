@@ -34,9 +34,13 @@
         <form class="popup__form js-popup-forEdit" name="form" id="formEdit">
           <h2 class="popup__title">Редактировать профиль</h2>
           <input name="field-name" type="text" class="popup__field field-name" placeholder="Имя" minlength="2" maxlength="40" required>
+          <p class="popup__error-block">
           <span class="popup__field-error field-name-error"></span>
+          </p>
           <input name="field-job" type="text" class="popup__field field-job" placeholder="О себе" minlength="2" maxlength="200" required>
+          <p class="popup__error-block">
           <span class="popup__field-error field-job-error"></span>
+          </p>
           <button type="submit"  class="popup__save-button" id="saveform">Сохранить</button>
         </form>
     </div>
@@ -47,9 +51,13 @@
         <form class="popup__form js-popup-forAdd" name="formAdd" id="formAdd"  >
           <h2 class="popup__title">Добавить картачку</h2>
           <input name="field-mesto" type="text" class="popup__field-Add field-alt"  placeholder="Название"   minlength="2" maxlength="30" required>
+          <p class="popup__error-block">
           <span class="popup__field-error field-mesto-error"></span>
+          </p>
           <input name="field-src" type="url" class="popup__field-Add field-src"  placeholder="Ссылка на картинку" required>
+          <p class="popup__error-block">
           <span class="popup__field-error field-src-error"></span>
+          </p>
           <button type="submit"  class="popup__save-button" id="Addsaveform">Сохранить</button>
         </form>
     </div>

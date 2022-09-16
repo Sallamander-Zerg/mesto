@@ -1,15 +1,7 @@
-.popup__field-error{
- font-weight: 400;
- font-size: 12px;
- line-height: 15px;
- margin-bottom: 0px;
- padding-top: 5px;
- text-align: left;
- max-width: 358px;
- vertical-align: middle;
-  box-sizing: border-box;
- width: 100%;
-}
-.popup__field-error:nth-child(3n) {
-    margin-bottom: 30px;
+.popup__field-error {
+  position: absolute;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  padding-top: 5px;
 }

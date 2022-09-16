@@ -7,9 +7,8 @@
   line-height: 17px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding-bottom: 13px;
-  margin-bottom: 0;
 }
-.popup__field-Add {
+.popup__field::placeholder {
   color: #c4c4c4;
   font-weight: 400;
   font-size: 14px;
