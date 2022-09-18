@@ -162,7 +162,8 @@ function createNewCards(card){
  newCard.querySelector('.element__photo').addEventListener('click',()=>{
   openPopup(popupImgProfile);
   selectPhoto.src = newCard.querySelector('.element__photo').src;
-  selectAlt.textContent=newCard.querySelector('.element__photo').alt;
+  selectPhoto.alt = newCard.querySelector('.element__photo').alt
+  selectAlt.textContent=  newCard.querySelector('.element__header').textContent;
  })
   return newCard;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 }
