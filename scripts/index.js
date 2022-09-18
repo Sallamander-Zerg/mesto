@@ -117,11 +117,6 @@ function closeKey(pop){
     closePopup(pop);
   }
   }) 
-  //   document.addEventListener('keydown', function (evt) {
-  //   if (evt.code==='Escape') {
-  //     closePopup(pop);
-  //   };
-  // }); 
 }
 function closeByEscape(evt) {
   if (evt.key === 'Escape') {
@@ -135,7 +130,7 @@ buttonCloseEditProfile.addEventListener('click', function() {
 buttonCloseAddProfile.addEventListener('click', function() { 
   closePopup(popupAddProfile); 
 }) 
-function formSubmitHandler (evt) {
+function submitFormHandler (evt) {
   evt.preventDefault(); 
   name.textContent = newName.value;
   job.textContent = newJob.value;
@@ -145,8 +140,9 @@ function formSubmitHandler (evt) {
 function addFormCard(evt){
 evt.preventDefault();
 const src  = newImege.value;
-const text = newImegeName.value; 
-const stats = {text,src};
+const text = newImegeName.value;
+const alt = newImegeName.value;
+const stats = {text,alt,src};
 const value = createNewCards(stats);
 addCards(value);
 closePopup(popupAddProfile)
@@ -178,7 +174,7 @@ initialCards.map(function (card){
 function addCards(el){
   caseContentCards.prepend(el);
 }
-formEdit.addEventListener('submit', formSubmitHandler);
+formEdit.addEventListener('submit', submitFormHandler);
 formCardAdd.addEventListener('submit',addFormCard);
 document.addEventListener('keydown', closeByEscape);
 document.removeEventListener('keydown', closeByEscape);
