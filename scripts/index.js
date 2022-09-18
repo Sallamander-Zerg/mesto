@@ -28,9 +28,11 @@ const CloseFormkey = ()=>{
 }
 const openPopup = (popup)=>{
   popup.classList.add('popup_active');
+  document.addEventListener('keydown', closeByEscape);
  };
  const closePopup = (cPopup)=>{
   cPopup.classList.remove('popup_active');
+  document.removeEventListener('keydown', closeByEscape);
  };
  
 const initialCards = [
@@ -177,8 +179,6 @@ function addCards(el){
 }
 formEdit.addEventListener('submit', submitFormHandler);
 formCardAdd.addEventListener('submit',addFormCard);
-document.addEventListener('keydown', closeByEscape);
-document.removeEventListener('keydown', closeByEscape);
 buttonCloseImgProfile.addEventListener('click',()=>{
   closePopup(popupImgProfile);
 });
