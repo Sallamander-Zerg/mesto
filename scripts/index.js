@@ -181,7 +181,7 @@ formCardAdd.addEventListener('submit',addFormCard);
 buttonCloseImgProfile.addEventListener('click',()=>{
   closePopup(popupImgProfile);
 });
-CloseFormkey()
+closeFormkey()
 // modalButtonsclose.forEach(function(item){
 //   item.addEventListener('click',function Close(event){
 //     event.preventDefault();
