@@ -19,7 +19,7 @@ const selectPhoto = document.querySelector('.popup__img');
 const selectAlt = document.querySelector('.popup__name');
 const popupImgProfile = document.querySelector('.js-popup-Img');
 const buttonCloseImgProfile = document.querySelector('.popup__close-butoon-img');
-const closeFormkey = ()=>{
+const closeFormKey = ()=>{
   const popupMas = Array.from(document.querySelectorAll('.popup'));
   popupMas.forEach(function(el){
     closeKey(el)
@@ -181,7 +181,7 @@ formCardAdd.addEventListener('submit',addFormCard);
 buttonCloseImgProfile.addEventListener('click',()=>{
   closePopup(popupImgProfile);
 });
-closeFormkey()
+closeFormKey()
 // modalButtonsclose.forEach(function(item){
 //   item.addEventListener('click',function Close(event){
 //     event.preventDefault();
