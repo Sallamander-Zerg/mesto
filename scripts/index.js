@@ -7,7 +7,6 @@ const job = document.querySelector('.profile__text');
 const name = document.querySelector('.profile__title');
 const formEdit = document.querySelector('.js-popup-forEdit');
 const formCardAdd = document.querySelector('.js-popup-forAdd');
-const likeButton = document.querySelectorAll('.element__like-button');
 const buttonAddProfile = document.querySelector('.profile__add-button');
 const buttonEditProfile  = document.querySelector('.profile__edit-button');
 const buttonCloseAddProfile = document.querySelector('.js-closeButoon-Add');
@@ -20,7 +19,7 @@ const selectPhoto = document.querySelector('.popup__img');
 const selectAlt = document.querySelector('.popup__name');
 const popupImgProfile = document.querySelector('.js-popup-Img');
 const buttonCloseImgProfile = document.querySelector('.popup__close-butoon-img');
-const CloseFormkey = ()=>{
+const closeFormkey = ()=>{
   const popupMas = Array.from(document.querySelectorAll('.popup'));
   popupMas.forEach(function(el){
     closeKey(el)
