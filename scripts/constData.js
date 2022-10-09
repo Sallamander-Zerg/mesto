@@ -1,4 +1,5 @@
 const obj = {
+  formSelector: '.popup__form',
   inputSelector: ".popup__field",
   submitButtonSelector: ".popup__save-button",
   inactiveButtonClass: "popup__save-button_inactive",

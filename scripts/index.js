@@ -21,6 +21,8 @@ const selectAlt = document.querySelector(".popup__name");
 const popupImgProfile = document.querySelector(".js-popup-Img");
 const buttonSubmit = document.querySelector(".popup__save-button");
 const popupMas = Array.from(document.querySelectorAll(".popup"));
+const cardFormModalWindowAdd = document.querySelector('.js-popup-Add');
+const cardFormModalWindowEdit = document.querySelector('.js-popup-edit');
 const buttonCloseImgProfile = document.querySelector(
   ".popup__close-butoon-img"
 );
@@ -95,7 +97,8 @@ function addMasCards() {
   });
 }
 function validation() {
-  const valStat = new FormValidator(obj, ".popup__form")._enableValidation();
+  const valStatAdd = new FormValidator(obj, cardFormModalWindowAdd)._enableValidation();
+  const valStatEdit = new FormValidator(obj, cardFormModalWindowEdit)._enableValidation();
 }
 addMasCards();
 validation();
