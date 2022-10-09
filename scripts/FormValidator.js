@@ -21,10 +21,10 @@ export class FormValidator {
   _toggleButtonState(inputElement) {
     if (!inputElement.validity.valid) {
       console.log(this.buttonElement);
-      this.buttonElement.setAttribute("disabled","disabled")
+      this.buttonElement.setAttribute("disabled", "disabled");
       this.buttonElement.classList.add(this.inactiveButtonClass);
     } else {
-      this.buttonElement.removeAttribute("disabled","disabled")
+      this.buttonElement.removeAttribute("disabled", "disabled");
       this.buttonElement.classList.remove(this.inactiveButtonClass);
     }
   }
@@ -36,10 +36,7 @@ export class FormValidator {
   }
   _isValid(inputElement) {
     if (!inputElement.validity.valid) {
-      this._showInputError(
-        inputElement,
-        inputElement.validationMessage
-      );
+      this._showInputError(inputElement, inputElement.validationMessage);
     } else {
       this._hideInputError(inputElement);
     }

@@ -3,7 +3,7 @@ import {
   selectPhoto,
   selectAlt,
   openPopup,
-  caseContentCards
+  caseContentCards,
 } from "./index.js";
 export class Card {
   constructor(templateSelector, text, alt, src) {
@@ -13,7 +13,7 @@ export class Card {
     this.src = src;
   }
   _getConfCard() {
-    console.log(this.templateSelector)
+    console.log(this.templateSelector);
     this.newCard = document
       .querySelector(this.templateSelector)
       .content.querySelector(".element")
@@ -55,8 +55,8 @@ export class Card {
     this.newCard.querySelector(".element__header").textContent = this.text;
     this._prependCard();
   }
-  _prependCard(){
-    console.log(this.newCard)
-   caseContentCards.prepend(this.newCard)
+  _prependCard() {
+    console.log(this.newCard);
+    caseContentCards.prepend(this.newCard);
   }
 }

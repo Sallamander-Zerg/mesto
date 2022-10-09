@@ -1,5 +1,5 @@
 const obj = {
-  formSelector: '.popup__form',
+  formSelector: ".popup__form",
   inputSelector: ".popup__field",
   submitButtonSelector: ".popup__save-button",
   inactiveButtonClass: "popup__save-button_inactive",
@@ -74,4 +74,4 @@ const initialCards = [
     src: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
   },
 ];
-export {initialCards ,obj};
+export { initialCards, obj };

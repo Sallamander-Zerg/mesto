@@ -1,6 +1,6 @@
-import {Card} from"./Card.js";
-import { initialCards ,obj} from"./constData.js"
-import { FormValidator } from "./FormValidator.js"
+import { Card } from "./Card.js";
+import { initialCards, obj } from "./constData.js";
+import { FormValidator } from "./FormValidator.js";
 const popupAddProfile = document.querySelector(".js-popup-Add");
 const popupEditProfile = document.querySelector(".js-popup-edit");
 const newName = document.querySelector(".field-name");
@@ -21,8 +21,8 @@ const selectAlt = document.querySelector(".popup__name");
 const popupImgProfile = document.querySelector(".js-popup-Img");
 const buttonSubmit = document.querySelector(".popup__save-button");
 const popupMas = Array.from(document.querySelectorAll(".popup"));
-const cardFormModalWindowAdd = document.querySelector('.js-popup-Add');
-const cardFormModalWindowEdit = document.querySelector('.js-popup-edit');
+const cardFormModalWindowAdd = document.querySelector(".js-popup-Add");
+const cardFormModalWindowEdit = document.querySelector(".js-popup-edit");
 const buttonCloseImgProfile = document.querySelector(
   ".popup__close-butoon-img"
 );
@@ -42,13 +42,13 @@ const closePopup = (popup) => {
 
 buttonEditProfile.addEventListener("click", function () {
   openPopup(popupEditProfile);
-  buttonSubmit.setAttribute("disabled","disabled")
+  buttonSubmit.setAttribute("disabled", "disabled");
   newName.value = name.textContent;
   newJob.value = job.textContent;
 });
 buttonAddProfile.addEventListener("click", function () {
   openPopup(popupAddProfile);
-  buttonSubmit.setAttribute("disabled","disabled")
+  buttonSubmit.setAttribute("disabled", "disabled");
   newImage.value = "";
   newImageName.value = "";
 });
@@ -82,8 +82,8 @@ function addFormCard(evt) {
   const src = newImage.value;
   const text = newImageName.value;
   const alt = newImageName.value;
-  const value = new Card("#card",text, alt, src)._generadeCard();
-  console.log(value)
+  const value = new Card("#card", text, alt, src)._generadeCard();
+  console.log(value);
   closePopup(popupAddProfile);
 }
 formEdit.addEventListener("submit", submitFormHandler);
@@ -97,8 +97,14 @@ function addMasCards() {
   });
 }
 function validation() {
-  const valStatAdd = new FormValidator(obj, cardFormModalWindowAdd)._enableValidation();
-  const valStatEdit = new FormValidator(obj, cardFormModalWindowEdit)._enableValidation();
+  const valStatAdd = new FormValidator(
+    obj,
+    cardFormModalWindowAdd
+  )._enableValidation();
+  const valStatEdit = new FormValidator(
+    obj,
+    cardFormModalWindowEdit
+  )._enableValidation();
 }
 addMasCards();
 validation();
