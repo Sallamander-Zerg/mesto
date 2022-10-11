@@ -12,7 +12,7 @@ export class Card {
     this.text = text;
     this.src = src;
   }
-  _getConfCard() {
+  _createTemplateCard() {
     console.log(this.templateSelector);
     this.newCard = document
       .querySelector(this.templateSelector)
@@ -23,40 +23,34 @@ export class Card {
     this.likeButton = this.newCard.querySelector(".element__like-button");
   }
   _likeCard() {
-    this.likeButton.addEventListener("click", () => {
       this.likeButton.classList.toggle("element__like-button_active");
-    });
   }
   _openCard() {
-    this.elementPhoto.addEventListener("click", () => {
       selectPhoto.src = this.elementPhoto.src;
       selectPhoto.alt = this.elementPhoto.alt;
       selectAlt.textContent = this.elementHendler.textContent;
       openPopup(popupImgProfile);
-    });
   }
   _deleteCard() {
-    this.newCard
-      .querySelector(".element__delete")
-      .addEventListener("click", () => {
-        this.newCard.remove();
-      });
+    this.newCard.remove();
   }
   _addEventListener() {
+    this.likeButton.addEventListener("click", () => {
     this._likeCard();
+    });
+    this.elementPhoto.addEventListener("click", () => {
     this._openCard();
+    });
+    this.newCard.querySelector(".element__delete").addEventListener("click", () => {
     this._deleteCard();
+    });
   }
-  _generadeCard() {
-    this._getConfCard();
+  generadeCard() {
+    this._createTemplateCard();
     this._addEventListener();
     this.elementPhoto.setAttribute("src", this.src);
     this.elementPhoto.setAttribute("alt", this.alt);
     this.newCard.querySelector(".element__header").textContent = this.text;
-    this._prependCard();
-  }
-  _prependCard() {
-    console.log(this.newCard);
-    caseContentCards.prepend(this.newCard);
+    return this.newCard;
   }
 }

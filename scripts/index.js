@@ -19,7 +19,6 @@ const caseContentCards = document.querySelector(".elements");
 const selectPhoto = document.querySelector(".popup__img");
 const selectAlt = document.querySelector(".popup__name");
 const popupImgProfile = document.querySelector(".js-popup-Img");
-const buttonSubmit = document.querySelector(".popup__save-button");
 const popupMas = Array.from(document.querySelectorAll(".popup"));
 const cardFormModalWindowAdd = document.querySelector(".js-popup-Add");
 const cardFormModalWindowEdit = document.querySelector(".js-popup-edit");
@@ -42,13 +41,13 @@ const closePopup = (popup) => {
 
 buttonEditProfile.addEventListener("click", function () {
   openPopup(popupEditProfile);
-  buttonSubmit.setAttribute("disabled", "disabled");
+  new FormValidator(obj,cardFormModalWindowEdit)._disabledButton();
   newName.value = name.textContent;
   newJob.value = job.textContent;
 });
 buttonAddProfile.addEventListener("click", function () {
   openPopup(popupAddProfile);
-  buttonSubmit.setAttribute("disabled", "disabled");
+  new FormValidator(obj,cardFormModalWindowAdd)._disabledButton();
   newImage.value = "";
   newImageName.value = "";
 });
@@ -82,8 +81,8 @@ function addFormCard(evt) {
   const src = newImage.value;
   const text = newImageName.value;
   const alt = newImageName.value;
-  const value = new Card("#card", text, alt, src)._generadeCard();
-  console.log(value);
+  const value = new Card("#card", text, alt, src).generadeCard();
+  addCards(value);
   closePopup(popupAddProfile);
 }
 formEdit.addEventListener("submit", submitFormHandler);
@@ -93,20 +92,24 @@ buttonCloseImgProfile.addEventListener("click", () => {
 });
 function addMasCards() {
   initialCards.forEach(function (el) {
-    const cartAset = new Card("#card", el.text, el.alt, el.src)._generadeCard();
+    const cartAset = new Card("#card", el.text, el.alt, el.src).generadeCard();
+    addCards(cartAset)
   });
 }
-function validation() {
-  const valStatAdd = new FormValidator(
+function addCards(el){
+  caseContentCards.prepend(el);
+}
+function validationForm() {
+  const validatorAddCardForm = new FormValidator(
     obj,
     cardFormModalWindowAdd
-  )._enableValidation();
-  const valStatEdit = new FormValidator(
+  ).enableValidation();
+  const validatorEditCardForm = new FormValidator(
     obj,
     cardFormModalWindowEdit
-  )._enableValidation();
+  ).enableValidation();
 }
 addMasCards();
-validation();
+validationForm();
 closeAllPopupsByOverlay();
-export { popupImgProfile, selectPhoto, selectAlt, caseContentCards, openPopup };
+export { popupImgProfile, selectPhoto, selectAlt, caseContentCards, openPopup};
