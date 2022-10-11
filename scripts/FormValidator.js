@@ -19,12 +19,12 @@ export class FormValidator {
   }
   _disabledButton(){
     this.buttonElement.setAttribute("disabled", "disabled");
-      this.buttonElement.classList.add(this.inactiveButtonClass);
   }
   _toggleButtonState(inputElement) {
     if (!inputElement.validity.valid) {
       console.log(this.buttonElement);
       this._disabledButton()
+      this.buttonElement.classList.add(this.inactiveButtonClass);
     } else {
       this.buttonElement.removeAttribute("disabled");
       this.buttonElement.classList.remove(this.inactiveButtonClass);
