@@ -41,13 +41,13 @@ const closePopup = (popup) => {
 
 buttonEditProfile.addEventListener("click", function () {
   openPopup(popupEditProfile);
-  new FormValidator(obj,cardFormModalWindowEdit)._disabledButton();
+  new FormValidator(obj, cardFormModalWindowEdit)._disabledButton();
   newName.value = name.textContent;
   newJob.value = job.textContent;
 });
 buttonAddProfile.addEventListener("click", function () {
   openPopup(popupAddProfile);
-  new FormValidator(obj,cardFormModalWindowAdd)._disabledButton();
+  new FormValidator(obj, cardFormModalWindowAdd)._disabledButton();
   newImage.value = "";
   newImageName.value = "";
 });
@@ -93,10 +93,10 @@ buttonCloseImgProfile.addEventListener("click", () => {
 function addMasCards() {
   initialCards.forEach(function (el) {
     const cartAset = new Card("#card", el.text, el.alt, el.src).generadeCard();
-    addCards(cartAset)
+    addCards(cartAset);
   });
 }
-function addCards(el){
+function addCards(el) {
   caseContentCards.prepend(el);
 }
 function validationForm() {
@@ -112,4 +112,4 @@ function validationForm() {
 addMasCards();
 validationForm();
 closeAllPopupsByOverlay();
-export { popupImgProfile, selectPhoto, selectAlt, caseContentCards, openPopup};
+export { popupImgProfile, selectPhoto, selectAlt, caseContentCards, openPopup };

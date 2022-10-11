@@ -17,13 +17,13 @@ export class FormValidator {
     this.errorElement.textContent = errorMessage;
     this.errorElement.classList.add(this.errorClass);
   }
-  _disabledButton(){
+  _disabledButton() {
     this.buttonElement.setAttribute("disabled", "disabled");
   }
   _toggleButtonState(inputElement) {
     if (!inputElement.validity.valid) {
       console.log(this.buttonElement);
-      this._disabledButton()
+      this._disabledButton();
       this.buttonElement.classList.add(this.inactiveButtonClass);
     } else {
       this.buttonElement.removeAttribute("disabled");
