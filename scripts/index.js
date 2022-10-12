@@ -30,12 +30,12 @@ const closeAllPopupsByOverlay = () => {
     closeAllPopupsByKey(el);
   });
 };
-const createCard = (text, alt, src) =>{
+const createCard = (text, alt, src) => {
   return new Card("#card", text, alt, src).generadeCard();
-}
-const Validator = (cardFormModalWindow) =>{
-  return new FormValidator(obj,cardFormModalWindow)
-}
+};
+const Validator = (cardFormModalWindow) => {
+  return new FormValidator(obj, cardFormModalWindow);
+};
 const openPopup = (popup) => {
   popup.classList.add("popup_active");
   document.addEventListener("keydown", closeByEscape);
@@ -98,7 +98,7 @@ buttonCloseImgProfile.addEventListener("click", () => {
 });
 function addMasCards() {
   initialCards.forEach(function (el) {
-    const newCard = createCard(el.text, el.alt, el.src)
+    const newCard = createCard(el.text, el.alt, el.src);
     addCards(newCard);
   });
 }
@@ -106,8 +106,12 @@ function addCards(el) {
   caseContentCards.prepend(el);
 }
 function validationForm() {
-  const validatorAddCardForm = Validator(cardFormModalWindowAdd).enableValidation();
-  const validatorEditCardForm = Validator(cardFormModalWindowEdit).enableValidation();
+  const validatorAddCardForm = Validator(
+    cardFormModalWindowAdd
+  ).enableValidation();
+  const validatorEditCardForm = Validator(
+    cardFormModalWindowEdit
+  ).enableValidation();
 }
 addMasCards();
 validationForm();

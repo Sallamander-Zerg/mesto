@@ -1,10 +1,4 @@
-import {
-  popupImgProfile,
-  selectPhoto,
-  selectAlt,
-  openPopup,
-  caseContentCards,
-} from "./index.js";
+import { popupImgProfile, selectPhoto, selectAlt, openPopup } from "./index.js";
 export class Card {
   constructor(templateSelector, text, alt, src) {
     this.templateSelector = templateSelector;
