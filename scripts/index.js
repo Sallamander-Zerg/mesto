@@ -30,6 +30,12 @@ const closeAllPopupsByOverlay = () => {
     closeAllPopupsByKey(el);
   });
 };
+const createCard = (text, alt, src) =>{
+  return new Card("#card", text, alt, src).generadeCard();
+}
+const Validator = (cardFormModalWindow) =>{
+  return new FormValidator(obj,cardFormModalWindow)
+}
 const openPopup = (popup) => {
   popup.classList.add("popup_active");
   document.addEventListener("keydown", closeByEscape);
@@ -41,13 +47,13 @@ const closePopup = (popup) => {
 
 buttonEditProfile.addEventListener("click", function () {
   openPopup(popupEditProfile);
-  new FormValidator(obj, cardFormModalWindowEdit)._disabledButton();
+  Validator(cardFormModalWindowEdit).disableButton();
   newName.value = name.textContent;
   newJob.value = job.textContent;
 });
 buttonAddProfile.addEventListener("click", function () {
   openPopup(popupAddProfile);
-  new FormValidator(obj, cardFormModalWindowAdd)._disabledButton();
+  Validator(cardFormModalWindowAdd).disableButton();
   newImage.value = "";
   newImageName.value = "";
 });
@@ -81,7 +87,7 @@ function addFormCard(evt) {
   const src = newImage.value;
   const text = newImageName.value;
   const alt = newImageName.value;
-  const value = new Card("#card", text, alt, src).generadeCard();
+  const value = createCard(text, alt, src);
   addCards(value);
   closePopup(popupAddProfile);
 }
@@ -92,22 +98,16 @@ buttonCloseImgProfile.addEventListener("click", () => {
 });
 function addMasCards() {
   initialCards.forEach(function (el) {
-    const cartAset = new Card("#card", el.text, el.alt, el.src).generadeCard();
-    addCards(cartAset);
+    const newCard = createCard(el.text, el.alt, el.src)
+    addCards(newCard);
   });
 }
 function addCards(el) {
   caseContentCards.prepend(el);
 }
 function validationForm() {
-  const validatorAddCardForm = new FormValidator(
-    obj,
-    cardFormModalWindowAdd
-  ).enableValidation();
-  const validatorEditCardForm = new FormValidator(
-    obj,
-    cardFormModalWindowEdit
-  ).enableValidation();
+  const validatorAddCardForm = Validator(cardFormModalWindowAdd).enableValidation();
+  const validatorEditCardForm = Validator(cardFormModalWindowEdit).enableValidation();
 }
 addMasCards();
 validationForm();
