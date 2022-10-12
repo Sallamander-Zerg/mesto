@@ -1,4 +1,4 @@
-.popup__error-block {
+.popup__errorBlock {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -7,11 +7,11 @@
   width: 100%;
   margin-bottom: 0px;
 }
-.popup__error-block:nth-child(3n) {
+.popup__errorBlock:nth-child(3n) {
   margin-bottom: 30px;
 }
 @media screen and (max-width: 948px) {
-  .popup__error-block {
+  .popup__errorBlock {
     margin-left: 36px;
   }
 }

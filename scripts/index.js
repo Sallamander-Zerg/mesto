@@ -11,8 +11,8 @@ const formEdit = document.querySelector(".js-popup-forEdit");
 const formCardAdd = document.querySelector(".js-popup-forAdd");
 const buttonAddProfile = document.querySelector(".profile__add-button");
 const buttonEditProfile = document.querySelector(".profile__edit-button");
-const buttonCloseAddProfile = document.querySelector(".js-closeButoon-Add");
-const buttonCloseEditProfile = document.querySelector(".js-closeButoon-Edit");
+const buttonCloseAddProfile = document.querySelector(".js-close-butoon-Add");
+const buttonCloseEditProfile = document.querySelector(".js-close-butoon-Edit");
 const newImage = document.querySelector(".field-src");
 const newImageName = document.querySelector(".field-alt");
 const caseContentCards = document.querySelector(".elements");
@@ -20,8 +20,8 @@ const selectPhoto = document.querySelector(".popup__img");
 const selectAlt = document.querySelector(".popup__name");
 const popupImgProfile = document.querySelector(".js-popup-Img");
 const popupMas = Array.from(document.querySelectorAll(".popup"));
-const cardFormModalWindowAdd = document.querySelector(".js-popup-Add");
-const cardFormModalWindowEdit = document.querySelector(".js-popup-edit");
+const cardFormModalWindowAdd = document.querySelector(".popup_type_card");
+const cardFormModalWindowEdit = document.querySelector(".popup_type_edit");
 const buttonCloseImgProfile = document.querySelector(
   ".popup__close-butoon-img"
 );
@@ -47,15 +47,15 @@ const closePopup = (popup) => {
 
 buttonEditProfile.addEventListener("click", function () {
   openPopup(popupEditProfile);
-  Validator(cardFormModalWindowEdit).disableButton();
   newName.value = name.textContent;
   newJob.value = job.textContent;
+  Validator(cardFormModalWindowEdit).disableButton();
 });
 buttonAddProfile.addEventListener("click", function () {
   openPopup(popupAddProfile);
-  Validator(cardFormModalWindowAdd).disableButton();
   newImage.value = "";
   newImageName.value = "";
+  Validator(cardFormModalWindowAdd).disableButton();
 });
 function closeAllPopupsByKey(pop) {
   pop.addEventListener("click", function (evt) {

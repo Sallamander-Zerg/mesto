@@ -12,7 +12,7 @@ export class FormValidator {
     this.buttonElement = this.form.querySelector(this.submitButtonSelector);
   }
   _showInputError(inputElement, errorMessage) {
-    this.errorElement = this.form.querySelector(`.${inputElement.name}-error`);
+    this.errorElement = this.form.querySelector(`.${inputElement.name}_error`);
     inputElement.classList.add(this.errorInput);
     this.errorElement.textContent = errorMessage;
     this.errorElement.classList.add(this.errorClass);
@@ -31,7 +31,7 @@ export class FormValidator {
     }
   }
   _hideInputError(inputElement) {
-    this.errorElement = this.form.querySelector(`.${inputElement.name}-error`);
+    this.errorElement = this.form.querySelector(`.${inputElement.name}_error`);
     inputElement.classList.remove(this.errorInput);
     this.errorElement.classList.remove(this.errorClass);
     this.errorElement.textContent = "";
