@@ -20,8 +20,14 @@ const selectPhoto = document.querySelector(".popup__img");
 const selectAlt = document.querySelector(".popup__name");
 const popupImgProfile = document.querySelector(".js-popup-Img");
 const popupMas = Array.from(document.querySelectorAll(".popup"));
-const cardFormModalWindowAdd = document.querySelector(".popup_type_card");
-const cardFormModalWindowEdit = document.querySelector(".popup_type_edit");
+const cardFormModalWindowAdd = new FormValidator(
+  obj,
+  document.querySelector(".popup_type_card")
+);
+const cardFormModalWindowEdit = new FormValidator(
+  obj,
+  document.querySelector(".popup_type_edit")
+);
 const buttonCloseImgProfile = document.querySelector(
   ".popup__close-butoon-img"
 );
@@ -32,9 +38,6 @@ const closeAllPopupsByOverlay = () => {
 };
 const createCard = (text, alt, src) => {
   return new Card("#card", text, alt, src).generadeCard();
-};
-const Validator = (cardFormModalWindow) => {
-  return new FormValidator(obj, cardFormModalWindow);
 };
 const openPopup = (popup) => {
   popup.classList.add("popup_active");
@@ -49,13 +52,13 @@ buttonEditProfile.addEventListener("click", function () {
   openPopup(popupEditProfile);
   newName.value = name.textContent;
   newJob.value = job.textContent;
-  Validator(cardFormModalWindowEdit).disableButton();
+  cardFormModalWindowEdit.disableButton();
 });
 buttonAddProfile.addEventListener("click", function () {
   openPopup(popupAddProfile);
   newImage.value = "";
   newImageName.value = "";
-  Validator(cardFormModalWindowAdd).disableButton();
+  cardFormModalWindowAdd.disableButton();
 });
 function closeAllPopupsByKey(pop) {
   pop.addEventListener("click", function (evt) {
@@ -105,15 +108,11 @@ function addMasCards() {
 function addCards(el) {
   caseContentCards.prepend(el);
 }
-function validationForm() {
-  const validatorAddCardForm = Validator(
-    cardFormModalWindowAdd
-  ).enableValidation();
-  const validatorEditCardForm = Validator(
-    cardFormModalWindowEdit
-  ).enableValidation();
+function formValidation() {
+  cardFormModalWindowAdd.enableValidation();
+  cardFormModalWindowEdit.enableValidation();
 }
 addMasCards();
-validationForm();
+formValidation();
 closeAllPopupsByOverlay();
 export { popupImgProfile, selectPhoto, selectAlt, caseContentCards, openPopup };
