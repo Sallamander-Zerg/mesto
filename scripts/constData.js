@@ -16,32 +16,17 @@ const initialCards = [
   {
     text: "Карачевск",
     alt: "Замок в горах",
-    src: "images/1.jpg",
+    src: "https://nesiditsa.ru/wp-content/uploads/2014/05/Sentinskiy-hram-bliz-aula-Nizhnyaya-Teberda.jpg",
   },
   {
-    text: "Гора Эльбрус",
-    alt: "Закат на фоне горы Эльбрус",
-    src: "images/2.jpg",
+    text: "Мусса-Ачитара",
+    alt: "вершина Мусса-Ачитара",
+    src: "https://public.mishka.travel/images/mini/f767c0236739b5b.jpg",
   },
   {
-    text: "Домбай",
-    alt: "лес на фоне гор",
-    src: "images/3.jpg",
-  },
-  {
-    text: "Гора Эльбрус",
-    alt: "Закат на фоне горы Эльбрус",
-    src: "images/4.jpg",
-  },
-  {
-    text: "Домбай",
-    alt: "лес на фоне гор",
-    src: "images/5.jpg",
-  },
-  {
-    text: "Карачаево-Черкесия",
-    alt: "Замок в горах",
-    src: "images/6.jpg",
+    text: "плато Бермамыт",
+    alt: "рассвет на плато Бермамыт",
+    src: "https://static.guidego.ru/webp/60c31aa45742852b75b9c020.1600x1200.webp",
   },
   {
     text: "Архыз",
