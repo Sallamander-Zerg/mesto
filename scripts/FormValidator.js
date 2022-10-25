@@ -22,7 +22,6 @@ export class FormValidator {
   }
   _toggleButtonState(inputElement) {
     if (!inputElement.validity.valid) {
-      console.log(this.buttonElement);
       this.disableButton();
       this.buttonElement.classList.add(this.inactiveButtonClass);
     } else {

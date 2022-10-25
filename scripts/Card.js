@@ -1,13 +1,12 @@
-import { popupImgProfile, selectPhoto, selectAlt, openPopup } from "../src/index.js";
 export class Card {
-  constructor(templateSelector, text, alt, src) {
+  constructor(templateSelector, text, alt, src,handleCardClick) {
     this.templateSelector = templateSelector;
     this.alt = alt;
     this.text = text;
     this.src = src;
+    this.handleCardClick= handleCardClick;
   }
   _createTemplateCard() {
-    console.log(this.templateSelector);
     this.newCard = document
       .querySelector(this.templateSelector)
       .content.querySelector(".element")
@@ -20,10 +19,10 @@ export class Card {
     this.likeButton.classList.toggle("element__like-button_active");
   }
   _openCard() {
-    selectPhoto.src = this.elementPhoto.src;
-    selectPhoto.alt = this.elementPhoto.alt;
-    selectAlt.textContent = this.elementHendler.textContent;
-    openPopup(popupImgProfile);
+    return {
+    link:this.elementPhoto.src,
+    name:this.elementHendler.textContent
+    }
   }
   _deleteCard() {
     this.newCard.remove();
@@ -33,7 +32,7 @@ export class Card {
       this._likeCard();
     });
     this.elementPhoto.addEventListener("click", () => {
-      this._openCard();
+      this.handleCardClick(this._openCard())
     });
     this.newCard
       .querySelector(".element__delete")
