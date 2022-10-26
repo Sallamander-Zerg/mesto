@@ -1,8 +1,8 @@
 .popup__conent {
   display: flex;
   flex-direction: column;
-  margin-left: 34px;
-  margin-right: 34px;
+  margin-left: 8px;
+  margin-right: 8px;
   block-size: auto;
   writing-mode: horizontal-tb;
 }
