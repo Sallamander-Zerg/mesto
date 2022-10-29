@@ -1,6 +1,6 @@
 export class Card {
-  constructor(templateSelector, text, alt, src, handleCardClick) {
-    this.templateSelector = templateSelector;
+  constructor(templateSelector, text, alt, src, { handleCardClick }) {
+    this._templateSelector = templateSelector;
     this.alt = alt;
     this.text = text;
     this.src = src;
@@ -8,7 +8,7 @@ export class Card {
   }
   _createTemplateCard() {
     this.newCard = document
-      .querySelector(this.templateSelector)
+      .querySelector(this._templateSelector)
       .content.querySelector(".element")
       .cloneNode(true);
     this.elementPhoto = this.newCard.querySelector(".element__photo");
@@ -19,10 +19,7 @@ export class Card {
     this.likeButton.classList.toggle("element__like-button_active");
   }
   _openCard() {
-    return {
-      link: this.elementPhoto.src,
-      name: this.elementHendler.textContent,
-    };
+    this.handleCardClick({ link: this.src, name: this.text });
   }
   _deleteCard() {
     this.newCard.remove();
@@ -32,7 +29,7 @@ export class Card {
       this._likeCard();
     });
     this.elementPhoto.addEventListener("click", () => {
-      this.handleCardClick(this._openCard());
+      this._openCard();
     });
     this.newCard
       .querySelector(".element__delete")
@@ -40,7 +37,7 @@ export class Card {
         this._deleteCard();
       });
   }
-  generadeCard() {
+  generateCard() {
     this._createTemplateCard();
     this._addEventListener();
     this.elementPhoto.setAttribute("src", this.src);
