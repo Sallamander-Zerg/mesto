@@ -6,9 +6,6 @@ import {
   infoName,
   buttonAddProfile,
   buttonEditProfile,
-  newImage,
-  newImageName,
-  popupImgProfile,
   cardSection,
 } from "../utils/constData.js";
 import { FormValidator } from "../components/FormValidator.js";
@@ -26,8 +23,8 @@ const cardFormModalWindowEditValidator = new FormValidator(
 );
 const userInfo = new UserInfo(".profile__title", ".profile__text");
 const imgPopup = new PopupWithImage(".js-popup-Img");
-const createCard = (text, alt, src) => {
-  return new Card("#card", text, alt, src, {
+const createCard = (title, link) => {
+  return new Card("#card", {title, link}, {
     handleCardClick: (openImg) => {
       imgPopup.open(openImg.link, openImg.name);
     },
@@ -37,27 +34,25 @@ const sectionCards = new Section(
   {
     items: initialCards,
     renderer: (item) => {
-      const newCard = createCard(item.text, item.alt, item.src);
+      const newCard = createCard(item.text ,item.src);
       sectionCards.additem(newCard);
     },
   },
   cardSection
 );
 sectionCards.renderItems();
-const SubmitformAdd = (fieldAddValues) => {
+const Submitadd = (fieldAddValues) => {
   const newCard = createCard(
-    fieldAddValues.fieldMesto,
     fieldAddValues.fieldMesto,
     fieldAddValues.fieldSrc
   );
   sectionCards.additem(newCard);
 };
-const submitFormAdd = new PopupWithForm(".js-popup-Add", SubmitformAdd);
-const SubmitformEdit = (fieldValues) => {
-  console.log(fieldValues.fieldName, fieldValues.fieldJob);
+const submitFormAdd = new PopupWithForm(".js-popup-Add", Submitadd);
+const Submitedit = (fieldValues) => {
   userInfo.setUserInfo(fieldValues.fieldName, fieldValues.fieldJob);
 };
-const submitFormHandler = new PopupWithForm(".js-popup-edit", SubmitformEdit);
+const submitFormHandler = new PopupWithForm(".js-popup-edit", Submitedit );
 submitFormHandler.setEventListeners();
 submitFormAdd.setEventListeners();
 buttonEditProfile.addEventListener("click", function () {
@@ -71,8 +66,8 @@ buttonAddProfile.addEventListener("click", function () {
   submitFormAdd.open();
   cardFormModalWindowAddValidator.disableButton();
 });
-function validationForm() {
+function validateForm() {
   cardFormModalWindowAddValidator.enableValidation();
   cardFormModalWindowEditValidator.enableValidation();
 }
-validationForm();
+validateForm();

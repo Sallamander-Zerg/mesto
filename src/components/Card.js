@@ -1,9 +1,8 @@
 export class Card {
-  constructor(templateSelector, text, alt, src, { handleCardClick }) {
+  constructor(templateSelector, {title, link}, { handleCardClick }) {
     this._templateSelector = templateSelector;
-    this.alt = alt;
-    this.text = text;
-    this.src = src;
+    this.title = title;
+    this.link = link;
     this.handleCardClick = handleCardClick;
   }
   _createTemplateCard() {
@@ -19,7 +18,7 @@ export class Card {
     this.likeButton.classList.toggle("element__like-button_active");
   }
   _openCard() {
-    this.handleCardClick({ link: this.src, name: this.text });
+    this.handleCardClick({ link: this.link, name: this.title });
   }
   _deleteCard() {
     this.newCard.remove();
@@ -40,9 +39,9 @@ export class Card {
   generateCard() {
     this._createTemplateCard();
     this._addEventListener();
-    this.elementPhoto.setAttribute("src", this.src);
-    this.elementPhoto.setAttribute("alt", this.alt);
-    this.newCard.querySelector(".element__header").textContent = this.text;
+    this.elementPhoto.setAttribute("src", this.link);
+    this.elementPhoto.setAttribute("alt", this.title);
+    this.newCard.querySelector(".element__header").textContent = this.title;
     return this.newCard;
   }
 }
