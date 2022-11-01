@@ -41,20 +41,21 @@ const sectionCards = new Section(
   cardSection
 );
 sectionCards.renderItems();
-const Submitadd = (fieldAddValues) => {
+const handleSubmitAddCardForm = (fieldAddValues) => {
   const newCard = createCard(
     fieldAddValues.fieldMesto,
     fieldAddValues.fieldSrc
   );
   sectionCards.additem(newCard);
 };
-const submitFormAdd = new PopupWithForm(".js-popup-Add", Submitadd);
-const Submitedit = (fieldValues) => {
+const submitFormAdd = new PopupWithForm(".js-popup-Add", handleSubmitAddCardForm);
+const handleSubmitEditProfileForm = (fieldValues) => {
   userInfo.setUserInfo(fieldValues.fieldName, fieldValues.fieldJob);
 };
-const submitFormHandler = new PopupWithForm(".js-popup-edit", Submitedit );
+const submitFormHandler = new PopupWithForm(".js-popup-edit", handleSubmitEditProfileForm);
 submitFormHandler.setEventListeners();
 submitFormAdd.setEventListeners();
+imgPopup.setEventListeners();
 buttonEditProfile.addEventListener("click", function () {
   submitFormHandler.open();
   const userData = userInfo.getUserInfo();
