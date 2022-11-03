@@ -1,0 +1,19 @@
+.profile__avatar-butt{
+  grid-area: avatar;
+  background-image: url(../../../../images/editavatar.jpg);
+  border-radius: 50%;
+  min-width: 120px;
+  max-height: 120px;
+  align-self: start;
+  margin: 0 auto;
+  opacity: 0;
+  border: 0;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: .8s ease;
+}
+.profile__avatar-butt:hover {
+    opacity: .8;
+    background-color: #000;
+  }
