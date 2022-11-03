@@ -1,4 +1,4 @@
-.profile__avatar-butt{
+.profile__avatar-butt {
   grid-area: avatar;
   background-image: url(../../../../images/editavatar.jpg);
   border-radius: 50%;
@@ -11,9 +11,9 @@
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center;
-  transition: .8s ease;
+  transition: 0.8s ease;
 }
 .profile__avatar-butt:hover {
-    opacity: .8;
-    background-color: #000;
-  }
+  opacity: 0.8;
+  background-color: #000;
+}
