@@ -1,4 +1,4 @@
-# Проект: https://sallamander-zerg.github.io/mesto/
+# Проект: https://sallamander-zerg.github.io/mesto
 
 ### Обзор
 проект яндекс Practicum позволяющий редактировать текст профиля при помощи графического интерфейса
