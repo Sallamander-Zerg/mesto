@@ -7,12 +7,22 @@ import {
   buttonAddProfile,
   buttonEditProfile,
   cardSection,
+  buttonEditAvatarProfile
 } from "../utils/constData.js";
 import { FormValidator } from "../components/FormValidator.js";
 import { Section } from "../components/Section";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo";
+import Api from "../components/Api"
 import PopupWithImage from "../components/PopupWithImage";
+import Popup from "../components/Popup";
+const api = new Api({
+  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-52',
+  headers: {
+    authorization: '1ce13fac-ab02-437f-bb39-64ceea4d3ebd',
+    'Content-Type': 'application/json'
+  }
+});
 const cardFormModalWindowAddValidator = new FormValidator(
   obj,
   document.querySelector(".popup_type_card")
@@ -56,6 +66,7 @@ const submitFormHandler = new PopupWithForm(".js-popup-edit", handleSubmitEditPr
 submitFormHandler.setEventListeners();
 submitFormAdd.setEventListeners();
 imgPopup.setEventListeners();
+
 buttonEditProfile.addEventListener("click", function () {
   submitFormHandler.open();
   const userData = userInfo.getUserInfo();
@@ -63,6 +74,9 @@ buttonEditProfile.addEventListener("click", function () {
   infoJob.value = userData.info;
   cardFormModalWindowEditValidator.disableButton();
 });
+buttonEditAvatarProfile.addEventListener("click",function(){
+  new Popup(".js-popup-avatar").open()
+})
 buttonAddProfile.addEventListener("click", function () {
   submitFormAdd.open();
   cardFormModalWindowAddValidator.disableButton();
