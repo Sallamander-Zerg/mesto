@@ -4,18 +4,18 @@ export default class Api {
       this._headers = options.headers;
     }
   
-    _parseResponse(res) {
+    _parseError(res) {
       if (res.ok) {
         return res.json();
       }
       return Promise.reject(`Ошибка: ${res.status}`)
     }
   
-    getInitialCards() {
+    getMassCards() {
       return fetch(`${this._baseUrl}/cards`, {
         headers: this._headers
       })
-        .then(res => this._parseResponse(res));
+        .then(res => this._parseError(res));
     }
   
     addCard(data) {
@@ -27,7 +27,7 @@ export default class Api {
           link: data.link
         })
       })
-        .then(res => this._parseResponse(res));
+        .then(res => this._parseError(res));
     }
  
     deleteCard(cardId) {
@@ -35,7 +35,7 @@ export default class Api {
         method: 'DELETE',
         headers: this._headers
       })
-        .then(res => this._parseResponse(res));
+        .then(res => this._parseError(res));
     }
 
     setLike(cardId) {
@@ -43,7 +43,7 @@ export default class Api {
         method: 'PUT',
         headers: this._headers
       })
-        .then(res => this._parseResponse(res));
+        .then(res => this._parseError(res));
     }
   
     deleteLike(cardId) {
@@ -51,7 +51,7 @@ export default class Api {
         method: 'DELETE',
         headers: this._headers
       })
-        .then(res => this._parseResponse(res));
+        .then(res => this._parseError(res));
     }
   
 
@@ -59,7 +59,7 @@ export default class Api {
       return fetch(`${this._baseUrl}/users/me`, {
         headers: this._headers
       })
-        .then(res => this._parseResponse(res));
+        .then(res => this._parseError(res));
     }
   
     editUserInfo(data) {
@@ -67,11 +67,11 @@ export default class Api {
         method: 'PATCH',
         headers: this._headers,
         body: JSON.stringify({
-          name: data.username,
-          about: data.job
+          name: data.fieldName,
+          about: data.fieldJob
         })
       })
-        .then(res => this._parseResponse(res));
+        .then(res => this._parseError(res));
     }
 
     editAvatar(data) {
@@ -79,9 +79,9 @@ export default class Api {
         method: 'PATCH',
         headers: this._headers,
         body: JSON.stringify({
-          avatar: data.avatar
+          avatar: data.fieldAvatarSrc
         })
       })
-        .then(res => this._parseResponse(res));
+        .then(res => this._parseError(res));
     }
   }

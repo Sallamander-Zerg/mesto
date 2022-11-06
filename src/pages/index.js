@@ -7,7 +7,8 @@ import {
   buttonAddProfile,
   buttonEditProfile,
   cardSection,
-  buttonEditAvatarProfile
+  buttonEditAvatarProfile,
+  infoAvatar
 } from "../utils/constData.js";
 import { FormValidator } from "../components/FormValidator.js";
 import { Section } from "../components/Section";
@@ -23,6 +24,11 @@ const api = new Api({
     'Content-Type': 'application/json'
   }
 });
+let userId;
+const cardFormModalWindowEditAvatarValidator = new FormValidator(
+  obj,
+  document.querySelector(".popup_type_edit-Avatar")
+);
 const cardFormModalWindowAddValidator = new FormValidator(
   obj,
   document.querySelector(".popup_type_card")
@@ -31,8 +37,18 @@ const cardFormModalWindowEditValidator = new FormValidator(
   obj,
   document.querySelector(".popup_type_edit")
 );
-const userInfo = new UserInfo(".profile__title", ".profile__text");
+const userInfo = new UserInfo(".profile__title", ".profile__text",".profile__avatar");
 const imgPopup = new PopupWithImage(".js-popup-Img");
+Promise.all([api.getMassCards(), api.getUserInfo()])
+  .then(([initialCards, userData]) => {
+    userInfo.setUserInfo(userData);
+    userId = userData._id;
+    sectionCards.renderItems(initialCards);
+  })
+  .catch((err) => {
+    console.log(`Ошибка: ${err}`);
+  });
+
 const createCard = (title, link) => {
   return new Card("#card", {title, link}, {
     handleCardClick: (openImg) => {
@@ -60,12 +76,43 @@ const handleSubmitAddCardForm = (fieldAddValues) => {
 };
 const submitFormAdd = new PopupWithForm(".js-popup-Add", handleSubmitAddCardForm);
 const handleSubmitEditProfileForm = (fieldValues) => {
-  userInfo.setUserInfo(fieldValues.fieldName, fieldValues.fieldJob);
+  console.log(fieldValues)
+submitFormHandler.loading(true);
+api.editUserInfo(fieldValues)
+  .then((fieldValues)=>{
+    console.log(fieldValues)
+    userInfo.setUserInfo(fieldValues);
+    submitFormHandler.close();
+  })
+  .catch((err) => {
+    console.log(`Ошибка: ${err}`);
+  })
+  .finally(() => {
+    submitFormHandler.loading(false);
+  });
 };
 const submitFormHandler = new PopupWithForm(".js-popup-edit", handleSubmitEditProfileForm);
+const handleSubmitAvatarProfileForm = (fieldValues) => {
+  console.log(fieldValues)
+  submitFormAvatar.loading(true);
+api.editAvatar(fieldValues)
+  .then((fieldValues)=>{
+    console.log(fieldValues)
+    userInfo.setUserInfo(fieldValues);
+    submitFormAvatar.close();
+  })
+  .catch((err) => {
+    console.log(`Ошибка: ${err}`);
+  })
+  .finally(() => {
+    submitFormAvatar.loading(false);
+  });
+};
+const submitFormAvatar = new PopupWithForm(".js-popup-avatar", handleSubmitAvatarProfileForm);
 submitFormHandler.setEventListeners();
 submitFormAdd.setEventListeners();
 imgPopup.setEventListeners();
+submitFormAvatar.setEventListeners();
 
 buttonEditProfile.addEventListener("click", function () {
   submitFormHandler.open();
@@ -75,7 +122,10 @@ buttonEditProfile.addEventListener("click", function () {
   cardFormModalWindowEditValidator.disableButton();
 });
 buttonEditAvatarProfile.addEventListener("click",function(){
-  new Popup(".js-popup-avatar").open()
+  submitFormAvatar.open()
+  const userData = userInfo.getUserInfo();
+  infoAvatar.value = userData.avatar;
+  cardFormModalWindowEditAvatarValidator.disableButton();
 })
 buttonAddProfile.addEventListener("click", function () {
   submitFormAdd.open();
@@ -84,5 +134,6 @@ buttonAddProfile.addEventListener("click", function () {
 function validateForm() {
   cardFormModalWindowAddValidator.enableValidation();
   cardFormModalWindowEditValidator.enableValidation();
+  cardFormModalWindowEditAvatarValidator.enableValidation();
 }
 validateForm();
