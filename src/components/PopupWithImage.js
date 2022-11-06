@@ -7,6 +7,7 @@ export default class PopupWithImage extends Popup {
   }
   open(link, name) {
     super.open();
+    super.setEventListeners();
     this.selectPhoto.src = link;
     this.selectPhoto.alt = name;
     this.selectAlt.textContent = name;

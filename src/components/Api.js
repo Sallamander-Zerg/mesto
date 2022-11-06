@@ -23,8 +23,8 @@ export default class Api {
         method: 'POST',
         headers: this._headers,
         body: JSON.stringify({
-          name: data.name,
-          link: data.link
+          name: data.fieldMesto,
+          link: data.fieldSrc
         })
       })
         .then(res => this._parseError(res));

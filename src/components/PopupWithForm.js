@@ -10,6 +10,7 @@ export default class PopupWithForm extends Popup {
   }
   close() {
     super.close();
+    this.form.reset();
   }
   loading(isLoading) {
     if (isLoading) {
@@ -20,6 +21,7 @@ export default class PopupWithForm extends Popup {
   }
   _getInputValues() {
     return this.inputs.reduce((fieldValues, input) => {
+      console.log(input.value)
       fieldValues[input.name] = input.value;
       return fieldValues;
     }, {});
@@ -28,10 +30,9 @@ export default class PopupWithForm extends Popup {
     super.setEventListeners();
     this.form.addEventListener("submit", (evt) => {
       evt.preventDefault();
-      console.log(1);
+      console.log();
       this.formSubmit(this._getInputValues());
       this.close();
     });
-    this.form.reset();
   }
 }

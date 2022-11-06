@@ -23,7 +23,7 @@
         <button type="button"  class="profile__add-button"  data-modal="AddCard"></button>
     </section>
     <section class="elements"> 
-      <template id="card"> <article class="element"><button class ="element__delete"></button><img class="element__photo" src="images/1.jpg" alt="замок" ><div class="element__description"><h2 class="element__header">Карачевск</h2><button type="button" class="element__like-button"></button></div></article></template>  
+      <template id="card"> <article class="element"><button class ="element__delete"></button><img class="element__photo" src="images/1.jpg" alt="замок" ><div class="element__description"><h2 class="element__header">Карачевск</h2><button type="button" class="element__like-button"></button><span class="element__likes-number"></span></div></article></template>  
     </section>
   </main>
   <footer class="footer">
@@ -86,9 +86,9 @@
     </form>
 </div> 
 </div>  
-<div class="popup js-popup-avatar popup_type_edit-Avatar" id="popupcontaner" data-modal="edituser">
+<div class="popup js-popup-answer" id="popupcontaner" data-modal="edituser">
   <div class="popup__container">
-    <button type="button" class="popup__close-butoon js-close-button-edit"  data-modal="edituser"></button>
+    <button type="button" class="popup__close-butoon js-close-button-popup-answer"  data-modal="edituser"></button>
     <form class="popup__form js-popup-avatar" name="form" id="formEdit">
       <h2 class="popup__title">Вы уверены?</h2>
       <button type="submit"  class="popup__save-button popup__set-button" id="saveform">Да</button>
