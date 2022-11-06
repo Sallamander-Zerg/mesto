@@ -16,7 +16,7 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo";
 import Api from "../components/Api"
 import PopupWithImage from "../components/PopupWithImage";
-import deletePopup from "../components/deletePopup"
+import DeletePopup from "../components/DeletePopup"
 const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-52',
   headers: {
@@ -36,7 +36,7 @@ const cardFormModalWindowEditValidator = new FormValidator(
   obj,
   document.querySelector(".popup_type_edit")
 );
-const deleteCard = new deletePopup(".js-popup-answer")
+const deleteCard = new DeletePopup(".js-popup-answer")
 const userInfo = new UserInfo(".profile__title", ".profile__text",".profile__avatar");
 const imgPopup = new PopupWithImage(".js-popup-Img");
 let userId;

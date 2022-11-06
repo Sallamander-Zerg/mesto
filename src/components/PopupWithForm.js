@@ -32,7 +32,6 @@ export default class PopupWithForm extends Popup {
       evt.preventDefault();
       console.log();
       this.formSubmit(this._getInputValues());
-      this.close();
     });
   }
 }

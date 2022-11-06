@@ -1,5 +1,5 @@
 import Popup from "./Popup.js";
-export default class deletePopup extends Popup {
+export default class DeletePopup extends Popup {
   constructor(popupSelector) {
     super(popupSelector);
     this._form = this._popupSelector.querySelector('.popup__form');
